@@ -10,12 +10,12 @@ import SwiftUI
 class PieChartViewModel: ObservableObject {
     @Published var PieChartDatas: [PieChartModel] = []
     
-    init() {
-        setupPieChartDatas()
+    init(sumArray: [Int]) {
+        let fromToArray = calcFromTo(sumArray: sumArray)
+        setupPieChartDatas(fromToArray: fromToArray)
     }
     
-    func setupPieChartDatas() {
-        let fromToArray = calcFromTo(sumArray: sumValues)
+    func setupPieChartDatas(fromToArray: [(from: CGFloat, to: CGFloat)]) {
         var i = 0
         for batArea in PieChartModel.BatAreas.allCases {
             PieChartDatas.append(PieChartModel(batArea: batArea,
@@ -49,5 +49,3 @@ class PieChartViewModel: ObservableObject {
     }
     
 }
-
-let sumValues = [3, 2, 23, 12, 20]

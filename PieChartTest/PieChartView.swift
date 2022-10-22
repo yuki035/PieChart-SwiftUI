@@ -8,12 +8,13 @@
 import SwiftUI
 
 
-
+let testSumArray = [3, 2, 23, 12, 20]
 
 struct PieChartView: View {
     private let angle = Angle(degrees: -90)
     private let atBats = 89
-    @ObservedObject var viewModel = PieChartViewModel()
+
+    @ObservedObject var viewModel = PieChartViewModel(sumArray: testSumArray)
 
     var body: some View {
         ZStack {
