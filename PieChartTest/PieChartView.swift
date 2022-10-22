@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum PieChartPositionDataEntry {
+enum BatAreas {
 
     case Pitcher
     case Catcher
@@ -49,7 +49,7 @@ enum PieChartPositionDataEntry {
 
 struct PieChartInfo: Identifiable, Equatable {
     let id    = UUID(),
-        color: Color,
+        batArea: BatAreas,
         from : CGFloat,
         to: CGFloat
 }
@@ -57,11 +57,11 @@ struct PieChartInfo: Identifiable, Equatable {
 struct PieChartView: View {
     private let angle = Angle(degrees: 270.0)
     private let atBats = 89
-    var datas = [PieChartInfo(color: .red, from: 0, to: 0.1),
-                 PieChartInfo(color: .blue, from: 0.1, to: 0.14),
-                 PieChartInfo(color: .yellow, from: 0.14, to: 0.56),
-                 PieChartInfo(color: .green, from: 0.56, to: 0.86),
-                 PieChartInfo(color: .gray, from: 0.86, to: 1)]
+    var datas = [PieChartInfo(batArea: .Pitcher, from: 0, to: 0.1),
+                 PieChartInfo(batArea: .Catcher, from: 0.1, to: 0.14),
+                 PieChartInfo(batArea: .Infielder, from: 0.14, to: 0.56),
+                 PieChartInfo(batArea: .Outfielder, from: 0.56, to: 0.86),
+                 PieChartInfo(batArea: .Other, from: 0.86, to: 1)]
     
     init() {
     }
@@ -71,7 +71,7 @@ struct PieChartView: View {
                 ForEach(datas) { data in
                     Circle()
                         .trim(from: data.from, to: data.to)
-                        .stroke(data.color, style: StrokeStyle(lineWidth: 30))
+                        .stroke(data.batArea.color(), style: StrokeStyle(lineWidth: 30))
                 }
             }
             .frame(width: 100, height: 100)
