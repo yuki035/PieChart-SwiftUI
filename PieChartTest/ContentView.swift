@@ -13,7 +13,7 @@ struct ContentView: View {
         ScrollView {
             Spacer().frame(height: 300)
             HStack(spacing: 40) {
-                PieChartPrototype()
+                PieChartView()
                     .padding()
                 HStack(){
                     VStack(alignment: .leading, spacing: 5) {
