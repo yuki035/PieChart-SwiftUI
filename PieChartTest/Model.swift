@@ -13,7 +13,7 @@ struct PieChartModel: Identifiable, Equatable {
         from: CGFloat,
         to: CGFloat
     
-    enum BatAreas {
+    enum BatAreas: CaseIterable {
 
         case Pitcher
         case Catcher
