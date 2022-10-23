@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct PieChartModel: Identifiable, Equatable {
+    
     let id = UUID(),
         batArea: BatAreas,
         from: CGFloat,
         to: CGFloat
+    var ratio: Float {
+        Float(to-from)*100
+    }
     
-    enum BatAreas {
-
+    enum BatAreas: CaseIterable {
+        
         case Pitcher
         case Catcher
         case Infielder
@@ -50,8 +54,8 @@ struct PieChartModel: Identifiable, Equatable {
                 return "その他"
             }
         }
-
+        
     }
-
+    
 }
 

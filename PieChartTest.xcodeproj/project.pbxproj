@@ -15,6 +15,7 @@
 		79942DD6290257E200208251 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79942DD5290257E200208251 /* PieChartView.swift */; };
 		79942E0A2903DEF200208251 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79942E092903DEF200208251 /* Model.swift */; };
 		79942E0C2903DF0500208251 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79942E0B2903DF0500208251 /* ViewModel.swift */; };
+		79942E102904078800208251 /* PieChartWholeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79942E0F2904078800208251 /* PieChartWholeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		79942DD5290257E200208251 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		79942E092903DEF200208251 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		79942E0B2903DF0500208251 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		79942E0F2904078800208251 /* PieChartWholeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartWholeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				79942DC52902207E00208251 /* PieChartTestApp.swift */,
 				79942DC72902207E00208251 /* ContentView.swift */,
 				79942DD3290220F400208251 /* PieChartPrototype.swift */,
+				79942E0F2904078800208251 /* PieChartWholeView.swift */,
 				79942DD5290257E200208251 /* PieChartView.swift */,
 				79942E092903DEF200208251 /* Model.swift */,
 				79942E0B2903DF0500208251 /* ViewModel.swift */,
@@ -154,6 +157,7 @@
 				79942DD4290220F400208251 /* PieChartPrototype.swift in Sources */,
 				79942DC82902207E00208251 /* ContentView.swift in Sources */,
 				79942E0C2903DF0500208251 /* ViewModel.swift in Sources */,
+				79942E102904078800208251 /* PieChartWholeView.swift in Sources */,
 				79942DC62902207E00208251 /* PieChartTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
