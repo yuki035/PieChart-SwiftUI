@@ -8,38 +8,40 @@
 import SwiftUI
 
 struct PieChartWholeView: View {
+    
+    @ObservedObject var viewModel: PieChartViewModel
+    
+    init(sumArray: [Int]) {
+        viewModel = PieChartViewModel(sumArray: sumArray)
+    }
+    
     var body: some View {
-        HStack(spacing: 40) {
-            PieChartView()
+        HStack(spacing: 36) {
+            PieChartView(viewModel: viewModel)
                 .padding()
-            HStack(){
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("■　").foregroundColor(.red)+Text("投手")
-                    Text("■　").foregroundColor(.blue)+Text("捕手")
-                    Text("■　").foregroundColor(.yellow)+Text("内野")
-                    Text("■　").foregroundColor(.green)+Text("外野")
-                    Text("■　").foregroundColor(.gray)+Text("その他")
-                }
-                VStack(spacing: 5) {
-                    Text("14.3%")
-                    Text("14.3%")
-                    Text("14.3%")
-                    Text("14.3%")
-                    Text("14.3%")
+            VStack(alignment: .leading,spacing: 5) {
+                ForEach(viewModel.PieChartDatas) { data in
+                    HStack {
+                        Text("■").foregroundColor(data.batArea.color())
+                        Text(data.batArea.toString())
+                        Spacer()
+                        Text(String(format: "%.1f", data.ratio)+"%")
+                    }
+                    .font(.footnote)
+                    .frame(width: 120)
                 }
             }
-            .font(.footnote)
-
         }
-        .padding()
-        .frame(width: 350)
-        .background()
+        .padding(.vertical)
+        .frame(width:UIScreen.main.bounds.width*0.90)
+        .background(Color.white)
         .cornerRadius(15)
     }
 }
 
 struct PieChartWholeView_Previews: PreviewProvider {
     static var previews: some View {
-        PieChartWholeView()
+        let testSumArray = [3, 2, 23, 12, 20]
+        PieChartWholeView(sumArray: testSumArray)
     }
 }

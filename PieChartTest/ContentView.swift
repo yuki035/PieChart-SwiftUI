@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    let testSumArray = [3, 2, 23, 12, 20]
     let normalBackgroundColor = Color(#colorLiteral(red: 0.949019134, green: 0.9490200877, blue: 0.9705254436, alpha: 1))
     var body: some View {
         ScrollView {
             Spacer().frame(height: 300)
-            PieChartWholeView()
+            PieChartWholeView(sumArray: testSumArray)
         }
-        .frame(width: 466.0)
+        .frame(maxWidth: .infinity)
         .background(normalBackgroundColor)
     }
 }

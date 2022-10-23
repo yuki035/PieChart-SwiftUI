@@ -8,13 +8,10 @@
 import SwiftUI
 
 
-let testSumArray = [3, 2, 23, 12, 20]
-
 struct PieChartView: View {
+    
     private let angle = Angle(degrees: -90)
-    private let atBats = 89
-
-    @ObservedObject var viewModel = PieChartViewModel(sumArray: testSumArray)
+    @ObservedObject var viewModel: PieChartViewModel
 
     var body: some View {
         ZStack {
@@ -29,7 +26,7 @@ struct PieChartView: View {
             .rotationEffect(angle)
             
             VStack {
-                Text("\(atBats)")
+                Text("\(viewModel.plateApperances)")
                     .font(.headline)
                 Text("打席")
                     .font(.caption)
@@ -40,6 +37,8 @@ struct PieChartView: View {
 
 struct PieChartView_Previews: PreviewProvider {
     static var previews: some View {
-        PieChartView()
+        let testSumArray = [3, 2, 23, 12, 20]
+        let viewModel = PieChartViewModel(sumArray: testSumArray)
+        PieChartView(viewModel: viewModel)
     }
 }
